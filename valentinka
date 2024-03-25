@@ -1,0 +1,426 @@
+#include <iostream>
+#include <Windows.h>
+#include <ctime>
+#include <string>
+constexpr auto RED = "\033[31m";
+constexpr auto RESET = "\033[0m";
+constexpr auto BOLD = "\033[1m";
+constexpr auto GREEN = "\033[32m";
+constexpr auto MAGENTA = "\033[35m";
+using namespace std;
+int main() {
+    SetConsoleOutputCP(1251);
+    srand(time(NULL));
+    const int ROWS = 16;
+    const int COLS = 23;
+    char arr[ROWS][COLS];
+    //тут делаю сердце
+    for (int i = 0; i < ROWS; i++) {
+        for (int j = 0; j < COLS; j++) {
+            arr[i][j] = ' ';
+        }
+    }
+    
+    for (int i = 2; i < 10; i++) {
+        for (int j = 0; j < COLS; j++) {
+            arr[i][j] = 'X';
+            arr[2][11] = arr[2][12] =arr[2][10] = ' ';
+        }
+     }
+    for (int j = 3; j < 20; j++) {
+        if (j >= 7 && j <= 15) {
+            continue;
+        }
+        else {
+            arr[0][j] = 'X';
+        }
+    }
+    for (int j = 1; j < 22; j++) {
+        arr[1][j] = 'X';
+        arr[1][10] = arr[1][12] =arr[1][11]= arr[1][13] =arr[1][9] = ' ';
+    }
+    
+    for (int i = 10; i < 11; i++) {
+        for (int j = 1; j <22; j++) {
+            arr[i][j] = 'X';
+        }
+    }
+    for (int i = 11; i < 12; i++) {
+        for (int j = 3; j < 20; j++) {
+            arr[i][j] = 'X';
+        }
+    }
+    for (int i = 12; i < 13; i++) {
+        for (int j = 7; j < 16; j++) {
+            arr[i][j] = 'X';
+        }
+    }
+    for (int i = 13; i < 14; i++) {
+        for (int j = 9; j < 14; j++) {
+            arr[i][j] = 'X';
+        }
+    }
+    for (int i = 14; i < 15; i++) {
+        for (int j = 11; j < 12; j++) {
+            arr[i][j] = 'X';
+        }
+    }
+    for (int i = 0; i < ROWS; i++) {
+        for (int j = 0; j < COLS; j++) {
+            cout <<BOLD<<RED<< arr[i][j];
+        }
+        cout <<RESET<< endl;
+    }
+    //тут делаю букву I, создаю масив для этого
+    const int rows = 8;
+    const int cols = 12;
+    char iii[rows][cols];
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            iii[i][j] = ' ';
+        }
+    }
+    for (int i = 1; i < 2; i++) {
+        for (int j = 0; j < cols; j++) {
+            iii[i][j] = '*';
+        }
+    }
+    for (int i = 2; i < 6; i++) {
+        for (int j = 5; j < 7; j++) {
+            iii[i][j] = '*';
+        }
+    }
+    for (int i = 6; i < 7; i++) {
+        for (int j = 0; j < cols; j++) {
+            iii[i][j] = '*';
+        }
+    }
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            cout<<RED<<iii[i][j];
+        }
+        cout <<RESET<< endl;
+    }
+
+    const int row = 8;
+    const int col = 100;
+    char loveyou[row][col];
+    for (int i = 0; i < row; i++) {
+        for (int j = 0; j < col; j++) {
+            loveyou[i][j] = ' ';
+        }
+    }
+    for (int i = 0; i < 7; i++) {
+        for (int j = 0; j < 2; j++) {
+            loveyou[i][j] = '*';
+        }
+    }
+    for (int i = 6; i < 7; i++) {
+        for (int j = 2; j < 9; j++) {
+            loveyou[i][j] = '*';
+        } 
+        //сделала букву L
+    }
+    for (int j = 13; j < 19; j++) {
+        loveyou[0][j] = '*';
+    }
+    for (int j = 12; j < 20; j++) {
+        if (j >= 13 && j <= 18) {
+            continue;
+        }
+        else {
+            loveyou[1][j] = '*';
+        }
+    }
+    for (int i = 2; i < 5; i++) {
+        for (int j = 11; j < 21; j++) {
+            if (j >= 12 && j <= 19) {
+                continue;
+            }
+            else { loveyou[i][j] = '*'; }
+        }
+    }
+    for (int i = 5; i < 6; i++) {
+        for (int j = 12; j < 20; j++) {
+            if (j >= 13 && j <= 18) {
+                continue;
+            }
+            else {
+                loveyou[5][j] = '*';
+            }
+        }
+    }
+    for (int i = 6; i < 7; i++) {
+        for (int j = 13; j < 19; j++) {
+            loveyou[i][j] = '*';
+        }
+    } //сделала букву О
+
+    
+    for (int i = 0; i < 2; i++) {
+        for (int j = 23; j < 31; j++) {
+            if (j >= 24 && j <= 29) {
+                continue;
+            }
+            else {
+                loveyou[i][j] = '*';
+            }
+        }
+    }
+    for (int i = 2; i < 5; i++) {
+        for (int j = 24; j < 30; j++) {
+            if (j >= 25 && j <= 28) {
+                continue;
+            }
+            else {
+                loveyou[i][j] = '*';
+            }
+        }
+    }
+    for (int i = 5; i < 6; i++) {
+        for (int j = 25; j < 29; j++) {
+            if (j >= 26 && j <= 27) {
+                continue;
+           }
+            else {
+                loveyou[i][j] = '*';
+            }
+        }
+    }
+    loveyou[6][26] =loveyou[6][27]= '*'; // сделала букву V
+    for (int i = 1; i < 7; i++) {
+        for (int j = 33; j < 35; j++) {
+            loveyou[i][j] = '*';
+        }
+    }
+   
+    for (int i = 0; i < 1; i++) {
+        for (int j = 33; j < 42; j++) {
+            loveyou[i][j] = '*';
+        }
+    }
+    for (int i = 3; i < 4; i++) {
+        for (int j = 35; j < 42; j++) {
+            loveyou[i][j] = '*';
+        }
+    }
+    for (int i = 6; i < 7; i++) {
+        for (int j = 35; j < 42; j++) {
+            loveyou[i][j] = '*';
+        }
+    } // сделала букву Е 
+    
+    for (int i = 0; i < 3; i++) {
+        for (int j = 54; j < 64; j++) {
+            if (j >= 55 && j <= 62) {
+                continue;
+            }
+            else {
+                loveyou[i][j] = '*';
+            }
+        }
+    }
+    for (int i = 3; i < 4; i++) {
+        for (int j = 55; j < 63; j++) {
+            if (j >= 56 && j <= 61) {
+                continue;
+            }
+            else {
+                loveyou[i][j] = '*';
+            }
+        }
+    }
+    for (int i = 4; i < 5; i++) {
+        for (int j = 56; j < 62; j++) {
+            if (j >= 57 && j <= 60) {
+                continue;
+            }
+            else {
+                loveyou[i][j] = '*';
+            }
+        }
+    }
+    loveyou[4][59]=loveyou[4][58] = '*';
+    for (int i = 5; i < 7; i++) {
+        for (int j = 58; j < 60; j++) {
+            loveyou[i][j] = '*';
+        }
+    } // сделала букву Y
+    
+    for (int i = 0; i < 1; i++) {
+        for (int j = 68; j < 74; j++) {
+            loveyou[i][j] = '*';
+        }
+    }
+    for (int i = 1; i < 2; i++) {
+        for (int j = 67; j < 75; j++) {
+            if (j >= 68 && j <= 73) {
+                continue;
+            }
+            else {
+                loveyou[i][j] = '*';
+            }
+        }
+    }
+    for (int i = 2; i < 5; i++) {
+        for (int j = 66; j < 76; j++) {
+            if (j >= 67 && j <= 74) {
+                continue;
+            }
+            else {
+                loveyou[i][j] = '*';
+            }
+        }
+    }
+    for (int i = 5; i < 6; i++) {
+        for (int j = 67; j < 75; j++) {
+            if (j >= 68 && j <= 73) {
+                continue;
+            }
+            else {
+                loveyou[i][j] = '*';
+            }
+        }
+    }
+    for (int i = 6; i < 7; i++) {
+        for (int j = 68; j < 74; j++) {
+            loveyou[i][j] = '*';
+        }
+    } // сделала букву О
+    
+    for (int i = 0; i < 5; i++) {
+        for (int j = 78; j < 89; j++) {
+            if (j >= 79 && j <= 87) {
+                continue;
+            }
+            else {
+                loveyou[i][j] = '*';
+            }
+        }
+    }
+    for (int i = 5; i < 6; i++) {
+        for (int j = 79; j < 88; j++) {
+            if (j > 81 && j <= 84) {
+                continue;
+            }
+            else {
+                loveyou[i][j] = '*';
+            }
+        }
+    }
+    for (int i = 6; i < 7; i++) {
+        for (int j = 82; j < 85; j++) {
+            loveyou[i][j] = '*';
+        }
+    }
+
+    for (int i = 0; i < row; i++) {
+        for (int j = 0; j < col; j++) {
+           cout<<RED<< loveyou[i][j];
+        }
+        cout <<RESET<< endl;
+    }
+    const int roww = 8;
+    const int coll = 70;
+    char bro[roww][coll];
+    for (int i = 0; i < roww; i++) {
+        for (int j = 0; j < coll; j++) {
+            bro[i][j] = ' ';
+        }
+        
+    }
+    for (int i = 0; i < 7; i++) {
+        for (int j = 0; j < 2; j++) {
+            bro[i][j] = '*';
+        }
+    }
+    for (int i = 0; i < 1; i++) {
+        for (int j = 2; j < 9; j++) {
+            bro[i][j] = '*';
+        }
+    }
+    bro[1][8]  = '*';
+    for (int i = 2; i < 3; i++) {
+        for (int j = 2; j < 9; j++) {
+            bro[i][j] = '*';
+        }
+    }
+    for (int i = 4; i < 5; i++) {
+        for (int j = 2; j < 9; j++) {
+            bro[i][j] = '*';
+        }
+    }
+    bro[5][8] = '*';
+    for (int i = 6; i < 7; i++) {
+        for (int j = 2; j < 9; j++) {
+            bro[i][j] = '*';
+        }
+    } //сделала букву В
+    for (int i = 0; i < 7; i++) {
+        for (int j = 11; j < 13; j++) {
+            bro[i][j] = '*';
+        }
+    }
+    for (int i = 0; i < 1; i++) {
+        for (int j = 13; j < 20; j++) {
+            bro[i][j] = '*';
+        }
+    }
+    bro[1][18] = bro[1][19] = '*';
+    for (int i = 2; i < 3; i++) {
+        for (int j = 13; j < 20; j++) {
+            bro[i][j] = '*';
+        }
+    }
+    bro[3][13] = bro[4][15] = bro[5][17] = bro[6][19] = '*';
+    for (int i = 0; i < 1; i++) {
+        for (int j = 25; j < 31; j++) {
+            bro[i][j] = '*';
+        }
+    }
+    for (int i = 1; i < 2; i++) {
+        for (int j = 24; j < 32; j++) {
+            if (j >= 25 && j <= 30) {
+                continue;
+            }
+            else {
+                bro[i][j] = '*';
+            }
+        }
+    }
+    for (int i = 2; i < 5; i++) {
+        for (int j = 23; j < 33; j++) {
+            if (j >= 24 && j <= 31) {
+                continue;
+            }
+            else {
+                bro[i][j] = '*';
+            }
+        }
+    }
+    for (int i = 5; i < 6; i++) {
+        for (int j = 24; j < 32; j++) {
+            if (j >= 25 && j <= 30) {
+                continue;
+            }
+            else {
+                bro[i][j] = '*';
+            }
+        }
+    }
+    for (int i = 6; i < 7; i++) {
+        for (int j = 25; j < 31; j++) {
+            bro[i][j] = '*';
+        }
+    }  //сделала буквы R i O 
+    for (int i = 0; i < roww; i++) {
+        for (int j = 0; j < coll; j++) {
+            cout <<MAGENTA<< bro[i][j];
+        }
+        cout <<RESET<< endl;
+    }
+    
+    system("pause");
+    return 0;
+
+}
